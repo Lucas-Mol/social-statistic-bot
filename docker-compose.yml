@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  yt_ig_sheets:
+    image: lucasmol/social-statistic-bot:latest
+    command: yt_ig_sheets
+    env_file: 
+      - .env
+    volumes:
+      - ./output:/app/output
+  yt_sheets:
+    image: lucasmol/social-statistic-bot:latest
+    command: yt_sheets
+    env_file: 
+      - .env
+    volumes:
+      - ./output:/app/output
+  ig_sheets:
+    image: lucasmol/social-statistic-bot:latest
+    command: ig_sheets
+    env_file: 
+      - .env
+    volumes:
+      - ./output:/app/output
+  yt_ig_text:
+    image: lucasmol/social-statistic-bot:latest
+    command: yt_ig_text
+    env_file: 
+      - .env
+    volumes:
+      - ./output:/app/output
+  yt_text:
+    image: lucasmol/social-statistic-bot:latest
+    command: yt_text
+    env_file: 
+      - .env
+    volumes:
+      - ./output:/app/output
+  ig_text:
+    image: lucasmol/social-statistic-bot:latest
+    command: ig_text
+    env_file: 
+      - .env
+    volumes:
+      - ./output:/app/output
