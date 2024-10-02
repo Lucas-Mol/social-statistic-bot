@@ -2,7 +2,7 @@ from domain.instagram.objects.instagram_profile import Instagram_Profile
 
 import pandas as pd
 from openpyxl import load_workbook
-from openpyxl.styles import PatternFill, Border, Side, Alignment
+from openpyxl.styles import PatternFill, Border, Side, Alignment, Font
 from openpyxl.utils import get_column_letter
 
 FILE_NAME = '/instagram_statistics.xlsx'
@@ -86,6 +86,7 @@ def _adjust_cell_size(ws):
                     max_length = len(str(cell.value))
             except:
                 pass
+            cell.font = Font(size=15)
         adjusted_width = (max_length + 2) 
         ws.column_dimensions[column[0].column_letter].width = adjusted_width  
 
@@ -103,6 +104,7 @@ def _adjust_cell_size_posts(ws):
                     max_length = len(str(cell.value))
             except:
                 pass
+            cell.font = Font(size=15)
         adjusted_width = (max_length + 2) 
         ws.column_dimensions[column[0].column_letter].width = adjusted_width  
 

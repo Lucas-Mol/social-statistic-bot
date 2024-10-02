@@ -2,7 +2,7 @@ from domain.youtube.objects.youtube_channel import Youtube_Channel
 
 import pandas as pd
 from openpyxl import load_workbook
-from openpyxl.styles import PatternFill, Border, Side
+from openpyxl.styles import PatternFill, Border, Side, Font
 
 FILE_NAME = '/youtube_statistics.xlsx'
 
@@ -143,6 +143,7 @@ def _adjust_cell_size(ws):
                     max_length = len(str(cell.value))
             except:
                 pass
+            cell.font = Font(size=15)
         adjusted_width = (max_length + 2) 
         ws.column_dimensions[column[0].column_letter].width = adjusted_width  
 
