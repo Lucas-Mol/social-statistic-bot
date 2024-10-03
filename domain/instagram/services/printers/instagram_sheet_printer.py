@@ -110,7 +110,7 @@ def _adjust_cell_size_posts(ws):
 
     for row in ws.iter_rows():
         for cell in row:
-            cell.alignment = Alignment(wrap_text=False, shrink_to_fit=True)
+            cell.alignment = Alignment(wrap_text=True, vertical='top', shrink_to_fit=True)
         ws.row_dimensions[row[0].row].height = 30
 
 def _color_fill_playlist_cells(ws_posts):
